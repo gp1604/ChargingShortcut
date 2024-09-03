@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLSchemes</key>
+	<string>chargingapp</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Test.ChargerAnimation</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>chargingapp</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSAppIntentsSupported</key>
+	<string></string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string></string>
+	</array>
+</dict>
+</plist>

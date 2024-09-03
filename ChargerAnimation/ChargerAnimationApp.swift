@@ -7,26 +7,39 @@
 
 import SwiftUI
 import SwiftData
+import AppIntents
+
 
 @main
 struct ChargerAnimationApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @State private var isCharging = false
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    UIDevice.current.isBatteryMonitoringEnabled = true
+                    NotificationCenter.default.addObserver(forName: UIDevice.batteryStateDidChangeNotification, object: nil, queue: .main) { _ in
+                        updateBatteryState()
+                    }
+                }
+                .onDisappear {
+                    NotificationCenter.default.removeObserver(self, name: UIDevice.batteryStateDidChangeNotification, object: nil)
+                }
+                .fullScreenCover(isPresented: $isCharging) {
+                    ChargingView()
+                }
+                .onChange(of: scenePhase) {_, newPhase in
+                     updateBatteryState()
+                }
+
         }
-        .modelContainer(sharedModelContainer)
+
+    }
+    
+    private func updateBatteryState() {
+        let batteryState = UIDevice.current.batteryState
+        isCharging = (batteryState == .charging || batteryState == .full)
     }
 }

@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		328EA4112C823CA100B0A6E3 /* ChargerAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328EA4102C823CA100B0A6E3 /* ChargerAnimationApp.swift */; };
 		328EA4132C823CA100B0A6E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328EA4122C823CA100B0A6E3 /* ContentView.swift */; };
-		328EA4152C823CA100B0A6E3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328EA4142C823CA100B0A6E3 /* Item.swift */; };
 		328EA4172C823CA300B0A6E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328EA4162C823CA300B0A6E3 /* Assets.xcassets */; };
 		328EA41A2C823CA300B0A6E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328EA4192C823CA300B0A6E3 /* Preview Assets.xcassets */; };
+		328EA4212C823E6200B0A6E3 /* OpenMyAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328EA4202C823E6200B0A6E3 /* OpenMyAppIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		328EA40D2C823CA100B0A6E3 /* ChargerAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargerAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		328EA4102C823CA100B0A6E3 /* ChargerAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerAnimationApp.swift; sourceTree = "<group>"; };
 		328EA4122C823CA100B0A6E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		328EA4142C823CA100B0A6E3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		328EA4162C823CA300B0A6E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		328EA4192C823CA300B0A6E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		328EA4202C823E6200B0A6E3 /* OpenMyAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMyAppIntent.swift; sourceTree = "<group>"; };
+		328EA4222C823EE200B0A6E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		328EA4232C82418F00B0A6E3 /* ChargerAnimation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChargerAnimation.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +55,13 @@
 		328EA40F2C823CA100B0A6E3 /* ChargerAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				328EA4232C82418F00B0A6E3 /* ChargerAnimation.entitlements */,
+				328EA4222C823EE200B0A6E3 /* Info.plist */,
 				328EA4102C823CA100B0A6E3 /* ChargerAnimationApp.swift */,
 				328EA4122C823CA100B0A6E3 /* ContentView.swift */,
-				328EA4142C823CA100B0A6E3 /* Item.swift */,
 				328EA4162C823CA300B0A6E3 /* Assets.xcassets */,
 				328EA4182C823CA300B0A6E3 /* Preview Content */,
+				328EA4202C823E6200B0A6E3 /* OpenMyAppIntent.swift */,
 			);
 			path = ChargerAnimation;
 			sourceTree = "<group>";
@@ -141,8 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				328EA4132C823CA100B0A6E3 /* ContentView.swift in Sources */,
-				328EA4152C823CA100B0A6E3 /* Item.swift in Sources */,
 				328EA4112C823CA100B0A6E3 /* ChargerAnimationApp.swift in Sources */,
+				328EA4212C823E6200B0A6E3 /* OpenMyAppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,11 +277,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChargerAnimation/ChargerAnimation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChargerAnimation/Preview Content\"";
+				DEVELOPMENT_TEAM = T349C9A5T5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChargerAnimation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -290,9 +297,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Test.ChargerAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,11 +312,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChargerAnimation/ChargerAnimation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChargerAnimation/Preview Content\"";
+				DEVELOPMENT_TEAM = T349C9A5T5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChargerAnimation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -318,9 +332,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Test.ChargerAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
